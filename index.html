@@ -1,14 +1,80 @@
+<!-- 
+o   o   O  o-O-o                 o o--o  o-o   o-o  o--o 
+|\  |  / \   |        |          | |    |     |     |    
+| \ | o---o  |       -o-         | O-o   o-o   o-o  O-o  
+|  \| |   |  |        |      \   o |        |     | |    
+o   o o   o  o                o-o  o--o o--o  o--o  o--o 
+                                                         
+                                                         
+             o   o o--o  o-o   o-o  o--o     o-o  o-o    
+             |\  | |    |     |     |       /    o   o   
+    o--o     | \ | O-o   o-o   o-o  O-o    O     |   |   
+    o--o     |  \| |        |     | |       \    o   o   
+             o   o o--o o--o  o--o  o--o O   o-o  o-o  
+
+built with <3 by nat + jesse :: nesse.co - coming soon! 
+
+natcooper.com
+jesseabramson.com
+ -->
 <!doctype html>
   <html>
   <head>
     <meta charset="utf-8">
-    <title>Breakfast for Mom</title>
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../src/mday2015.js"></script>
+    <title>Mother's Day - Breakfast & Quote Generator</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="src/jquery.countdown.js"></script>
+    <script src="src/mday2015.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Muli:300,400|Abril+Fatface' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
-  <h1>Breakfast for Mom</h1>
-
+    <main>
+      <h1>Mother's Day <span>Breakfast Recipes &amp; Card Generator</span></h1>
+      <h2>My mom is...</h2>
+      <select>
+        <option value="traditional">Traditional</option>
+        <option value="rocker">A Rocker Chick</option>
+        <option value="artsy">Artsy Fartsy</option>
+        <option value="hippie">A Hippie</option>
+        <option value="disco">A Disco Diva</option>
+        <option value="savvy">A Savvy Businesswoman</option>
+        <option value="globetrotter">A Globetrotter</option>
+        <option value="bookworm">A Book Worm</option>
+        <option value="sweetheart">A Total Sweetheart</option>
+      </select>
+      <a class="go" href="#">go!</a>
+      <section class="recipe">
+        <div>
+          <img src="http://placehold.it/300x300" alt="">
+          <p>Recipe Title Here</p>
+          <p>Ingredient, ingredient, ingredient, ingredient and ingredient</p>
+          <a href="#">get the recipe</a>
+        </div>
+        <div>
+          <span class="openQ">&ldquo;</span>
+          <p>As far as I'm concerned, there's no job more important on the planet than being a mom.</p>
+          <span class="closeQ">&rdquo;</span>
+          <p>- Mark Wahlberg</p>
+        </div>
+      </section>
+      <a class="go new" href="#">generate new recipe</a>
+      <section class="flower">
+        <div id="clock"></div>
+        <p>Until Mother's Day 2015</p>
+        <img src="img/left-corner-flowers.svg" alt="">
+      </section>
+    </main>
   </body>
 </html>
+<script>
+  $(document).ready(function(){
+    $('#clock').countdown("2015/05/10", function(event) {
+      $(this).text(
+        event.strftime('%D days')
+      );
+    });
+  });
+
+
+</script>

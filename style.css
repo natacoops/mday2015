@@ -1,0 +1,176 @@
+@font-face {
+  font-family: Salome;
+  src: url(src/Salome.otf);
+}
+@font-face {
+  font-family: Salome Deco;
+  src: url(src/Salome_Deco.otf);
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: white;
+  background: radial-gradient(circle, white 20%, #ebebeb);
+  background-size: cover;
+}
+
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.go {
+  margin-left: 10px;
+  text-decoration: none;
+  background: #51B57F;
+  padding: 6px 10px;
+  color: #fff;
+  font-family: 'Muli';
+  font-weight: 400;
+}
+
+.new {
+  position: relative;
+  top: 30px;
+  display: inline-block;
+  width: 120px;
+}
+
+.flower {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+}
+.flower img {
+  width: 100%;
+  opacity: 0.8;
+  position: relative;
+  left: -10px;
+  bottom: -10px;
+}
+.flower p {
+  position: fixed;
+  bottom: 30px;
+  left: 55px;
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 17px;
+  width: 160px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  font-family: 'Muli';
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 4rem;
+  font-family: 'Salome Deco', cursive;
+  text-transform: uppercase;
+  color: #51B57F;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 0.1px #333;
+}
+h1 span {
+  font-size: 30px;
+  display: block;
+  text-transform: uppercase;
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+h2 {
+  color: #333;
+  display: inline;
+  font-family: 'Muli';
+  padding-right: 20px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+#clock {
+  font-family: 'Salome Deco', cursive;
+  font-size: 65px;
+  color: #222;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  text-transform: uppercase;
+  z-index: 1;
+  letter-spacing: -1px;
+  -webkit-text-stroke: 2px black;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  height: 230px;
+  width: 230px;
+  padding-top: 30px;
+}
+
+.recipe {
+  position: relative;
+  z-index: 4;
+  margin-top: 15px;
+}
+.recipe div:first-child {
+  width: 300px;
+  height: 380px;
+  margin: 0 auto;
+  background: #333;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.recipe div:first-child p:nth-child(2) {
+  position: relative;
+  top: -55px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-family: 'Muli';
+  color: #FFF;
+  letter-spacing: 0.25px;
+  font-weight: 300;
+  font-size: 20px;
+}
+.recipe div:first-child p:nth-child(3) {
+  position: relative;
+  top: -60px;
+  padding: 0 10px;
+  font-family: 'Muli';
+  font-size: 13px;
+  line-height: 18px;
+  color: #f5f5f5;
+}
+.recipe div:first-child a {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  font-family: 'Muli';
+  font-weight: 400;
+  text-decoration: none;
+  background: #51B57F;
+  padding: 6px 10px;
+}
+.recipe div:last-child {
+  display: inline-block;
+  width: 300px;
+  height: 380px;
+  background: #FFF;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0px 15px 40px -20px rgba(204, 204, 204, 0.95);
+  -moz-box-shadow: 0px 15px 40px -20px rgba(204, 204, 204, 0.95);
+  box-shadow: 0px 15px 40px -20px rgba(204, 204, 204, 0.95);
+  margin-left: 10px;
+}
+.recipe div:last-child span {
+  font-family: 'Abril Fatface';
+  font-size: 30px;
+}
