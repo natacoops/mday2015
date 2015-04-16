@@ -31,25 +31,69 @@ jesseabramson.com
   <body>
     <main>
       <h1>Mother's Day <span>Breakfast Recipes &amp; Card Generator</span></h1>
+      <div class="dropdown">
       <h2>My mom is...</h2>
-      <select id="momType">
-        <option value="traditional">Traditional</option>
-        <option value="rocker">A Rocker Chick</option>
-        <option value="artsy">Artsy Fartsy</option>
-        <option value="hippie">A Hippie</option>
-        <option value="hippie">Sporty and Strong</option>
-        <option value="disco">A Disco Diva</option>
-        <option value="savvy">A Savvy Businesswoman</option>
-        <option value="globetrotter">A Globetrotter</option>
-        <option value="bookworm">A Book Worm</option>
-        <option value="sweetheart">A Total Sweetheart</option>
-      </select>
-      <a class="go" id="getResults" href="#">go!</a>
+      <span class="triangle"></span>
+      <ul id="momType">
+        <li class="traditional">Traditional</li>
+        <li class="rocker">A Rocker Chick</li>
+        <li class="artsy">Artsy Fartsy</li>
+        <li class="hippie">A Hippie</li>
+        <li class="sporty">Sporty and Strong</li>
+        <li class="disco">A Disco Diva</li>
+        <li class="savvy">A Businesswoman</li>
+        <li class="globetrotter">A Globetrotter</li>
+        <li class="bookworm">A Book Worm</li>
+        <li class="sweetheart">A Total Sweetheart</li>
+      </ul>
+      </div>
+      <div class="theMoms">
+        <div class="traditionalMom">
+          <h3>Traditional</h3>
+          <p>Nothing better than bacon, eggs and toast!</p>
+        </div>
+        <div class="rockerMom">
+          <h3>A Rocker Chick</h3>
+          <p>A Mom with a wild personality deserves something bold and spicy for breakfast!</p>
+        </div>
+        <div class="artsyMom">
+          <h3>Artsy Fartsy</h3>
+          <p>Your eccentric Mom deserves a unique breakfast with a fabulous presentation!</p>
+        </div>
+        <div class="hippieMom">
+          <h3>A Hippie</h3>
+          <p>These recipes are totally GREEN, man!</p>
+        </div>
+        <div class="sportyMom">
+          <h3>Sporty and Strong</h3>
+          <p>Sporty Moms burn energy and need all the protein they can get!</p>
+        </div>
+        <div class="discoMom">
+          <h3>A Disco Diva</h3>
+          <p>These colourful breakfasts will remind your Mom of the vibrant Disco era!</p>
+        </div>
+        <div class="savvyMom">
+          <h3>A Businesswoman</h3>
+          <p>These quinoa-based recipes are bound to give your savvy Mom an energy boost!</p>
+        </div>
+        <div class="globetrotterMom">
+          <h3>A Globetrotter</h3>
+          <p>Bacon & eggs simply won't do for your world-traveller Mom!</p>
+        </div>
+        <div class="bookwormMom">
+          <h3>A Book Worm</h3>
+          <p>Feed Mom's brain with these Salmon-based breakfasts packed with Omega 3!</p>
+        </div>
+        <div class="sweetheartMom">
+          <h3>A Total Sweetheart</h3>
+          <p>Treat mom to a sweet breakfast packed with sugar and strawberries!</p>
+        </div>
+      </div>
+      <!-- <a class="go" id="getResults" href="#">go!</a> -->
       <section class="recipe">
         <div>
-          <img src="http://placehold.it/300x300" id="recipeImg" alt="">
-          <p id="recipeTitle">Recipe Title Here</p>
-          <p>Ingredient, ingredient, ingredient, ingredient and ingredient</p>
+          <img src="" id="recipeImg" alt="">
+          <p id="recipeTitle"></p>
           <a href="#">get the recipe</a>
         </div>
         <div>
@@ -60,22 +104,12 @@ jesseabramson.com
         </div>
       </section>
       <a class="go new" href="#">generate new recipe</a>
-      <section class="flower">
-        <div id="clock"></div>
-        <p>Until Mother's Day 2015</p>
-        <img src="img/left-corner-flowers.svg" alt="">
-      </section>
     </main>
+    <section class="flower">
+      <div id="clock"></div>
+      <p>Until Mother's Day 2015</p>
+      <img src="img/left-corner-flowers.svg" alt="">
+    </section>
   </body>
 </html>
-<script>
-  $(document).ready(function(){
-    $('#clock').countdown("2015/05/10", function(event) {
-      $(this).text(
-        event.strftime('%D days')
-      );
-    });
-  });
 
-
-</script>

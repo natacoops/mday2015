@@ -21,6 +21,35 @@ html {
 main {
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+#momType {
+  display: none;
+  list-style: none;
+  font-family: 'Muli';
+  color: #fff;
+  margin-top: 8px;
+  position: absolute;
+  z-index: 10;
+  padding: 5px 0 0 0;
+}
+#momType li {
+  background: #B975A1;
+  display: block;
+  width: 190px;
+  height: 32px;
+  padding-top: 7px;
+  letter-spacing: 0.25px;
+  margin: 0 auto 3px;
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+#momType li:hover {
+  background: #5F3260;
+  cursor: pointer;
 }
 
 .go {
@@ -40,11 +69,46 @@ main {
   width: 120px;
 }
 
+#recipeImg {
+  height: 260px;
+  position: relative;
+  left: -25%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: -20px;
+  width: 190px;
+  height: 31.5px;
+  z-index: 10;
+  background: #51B57F;
+}
+.dropdown:hover {
+  cursor: pointer;
+}
+.dropdown .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 9px 0 9px;
+  border-color: #F5F5F5 transparent transparent transparent;
+  float: right;
+  position: relative;
+  top: 11px;
+  right: 10px;
+}
+.dropdown .triangleUp {
+  border-width: 0 9px 10px 9px !important;
+  border-color: transparent transparent whitesmoke transparent !important;
+}
+
 .flower {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 50%;
+  text-align: center;
 }
 .flower img {
   width: 100%;
@@ -86,13 +150,43 @@ h1 span {
 }
 
 h2 {
-  color: #333;
+  color: #fff;
   display: inline;
   font-family: 'Muli';
   padding-right: 20px;
   text-transform: lowercase;
   letter-spacing: 1px;
   font-size: 18px;
+  position: relative;
+  top: 5px;
+}
+
+h3 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  line-height: 20px;
+}
+
+.theMoms {
+  height: 50px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 400px;
+  left: 20px;
+}
+.theMoms div {
+  display: none;
+  position: absolute;
+  top: -20px;
+}
+.theMoms div p {
+  font-family: 'Muli';
+  width: 615px;
+  margin: -15px auto 0;
 }
 
 #clock {
@@ -127,10 +221,11 @@ h2 {
   position: relative;
   display: inline-block;
   vertical-align: top;
+  overflow: hidden;
 }
 .recipe div:first-child p:nth-child(2) {
   position: relative;
-  top: -55px;
+  top: -15px;
   padding: 0 10px;
   text-transform: uppercase;
   font-family: 'Muli';
@@ -156,10 +251,17 @@ h2 {
   font-family: 'Muli';
   font-weight: 400;
   text-decoration: none;
-  background: #51B57F;
+  background: #B975A1;
   padding: 6px 10px;
+  transition: 0.5s all;
+  -wekbit-transition: 0.5s all;
+}
+.recipe div:first-child a:hover {
+  background: #5F3260;
 }
 .recipe div:last-child {
+  font-family: 'Muli';
+  padding: 30px;
   display: inline-block;
   width: 300px;
   height: 380px;

@@ -24,16 +24,16 @@
   mdayApp.quotes.push('"Mama was my greatest teacher, a teacher of compassion, love and fearlessness. If love is sweet as a flower, then my mother is that sweet flower of love." - Stevie Wonder');
 
   mdayApp.data = []
-  mdayApp.data.push("&allowedIngredient[]=bacon&allowedIngredient[]=eggs&allowedIngredient[]=toast&excludedIngredient[]=avocado&flavor.sweet=0.3&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=onions&excludedIngredient[]=avocado&excludedIngredient[]=hot%20sauce&excludedIngredient[]=tomatoes&flavor.piquant=1&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=avocado&allowedIngredient[]=eggs&allowedIngredient[]=salsa&excludedIngredient[]=hummus&excludedIngredient[]=tortillas&excludedIngredient[]=wheat&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=spinach&excludedIngredient[]=eggs&excludedIngredient[]=oats&allowedDiet[]=vegan&flavor.meaty=0.1&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=bacon&allowedIngredient[]=eggs&allowedIngredient[]=potatoes&allowedIngredient[]=sausage&flavor.meaty=0.7&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=fruit&allowedIngredient[]=kiwi&allowedIngredient[]=strawberries&excludedIngredient[]=avocado&excludedIngredient[]=lemon&excludedIngredient[]=lemon juice&excludedIngredient[]=nuts&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=quinoa&excludedIngredient[]=bacon&excludedIngredient[]=cranberry%20sauce&excludedIngredient[]=spinach&flavor.meaty=0.7&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=eggs&excludedCuisine[]=english excludedCuisine[]=italian&excludedCuisine[]=kid-friendly excludedCuisine[]=southern%20&%20soul%20food&excludedCuisine[]=american allowedCuisine[]=greek&allowedCuisine[]=asian&allowedCuisine[]=german allowedCuisine[]=indian&allowedCuisine[]=irish&allowedCuisine[]=japanese&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=salmon&flavor.sweet=0.3&maxResult=20&imagesOnly=true");
-  mdayApp.data.push("&allowedIngredient[]=strawberries&allowedIngredient[]=sugar&excludedIngredient[]=oats&flavor.meaty=0.6&flavor.sweet=0.9&maxResult=20&imagesOnly=true");
+  mdayApp.data.push("&allowedIngredient[]=bacon&allowedIngredient[]=eggs&allowedIngredient[]=toast&excludedIngredient[]=avocado&flavor.sweet=0.3&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=onions&excludedIngredient[]=avocado&excludedIngredient[]=hot%20sauce&excludedIngredient[]=tomatoes&flavor.piquant=1&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=avocado&allowedIngredient[]=eggs&allowedIngredient[]=salsa&excludedIngredient[]=hummus&excludedIngredient[]=tortillas&excludedIngredient[]=wheat&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=spinach&excludedIngredient[]=eggs&excludedIngredient[]=oats&allowedDiet[]=vegan&flavor.meaty=0.1&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=bacon&allowedIngredient[]=eggs&allowedIngredient[]=potatoes&allowedIngredient[]=sausage&flavor.meaty=0.7&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=fruit&allowedIngredient[]=kiwi&allowedIngredient[]=strawberries&excludedIngredient[]=avocado&excludedIngredient[]=lemon&excludedIngredient[]=lemon juice&excludedIngredient[]=nuts&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=quinoa&excludedIngredient[]=bacon&excludedIngredient[]=cranberry%20sauce&excludedIngredient[]=spinach&flavor.meaty=0.7&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=eggs&excludedCuisine[]=english excludedCuisine[]=italian&excludedCuisine[]=kid-friendly excludedCuisine[]=southern%20&%20soul%20food&excludedCuisine[]=american allowedCuisine[]=greek&allowedCuisine[]=asian&allowedCuisine[]=german allowedCuisine[]=indian&allowedCuisine[]=irish&allowedCuisine[]=japanese&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=eggs&allowedIngredient[]=salmon&flavor.sweet=0.3&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
+  mdayApp.data.push("&allowedIngredient[]=strawberries&allowedIngredient[]=sugar&excludedIngredient[]=oats&flavor.meaty=0.6&flavor.sweet=0.9&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
   
   function populateSearchResults( results ) { 
 
@@ -54,6 +54,7 @@
     $("#recipeImg").attr("alt", mdayApp.results[randomResult].recipeName);
     $("#recipeTitle").text(mdayApp.results[randomResult].recipeName);
 
+
   }
   
   $(function () {
@@ -70,7 +71,59 @@
       });
 
     });
-      
+
+    $('.dropdown').click(function(){
+      $('#momType').slideToggle("slow");
+      $('.triangle').toggleClass('triangleUp');
+    });
+
+    $('#clock').countdown("2015/05/10", function(event) {
+      $(this).text(
+        event.strftime('%D days')
+      );
+    });
+
+    $('.traditional').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.traditionalMom').fadeIn();
+    });
+    $('.rocker').click(function(){
+      $('.traditionalMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.rockerMom').fadeIn();
+    });
+    $('.artsy').click(function(){
+      $('.traditionalMom, .rockerMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.artsyMom').fadeIn();
+    });
+    $('.hippie').click(function(){
+      $('.rockerMom, .artsyMom, .traditionalMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.hippieMom').fadeIn();
+    });
+    $('.sporty').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .traditionalMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.sportyMom').fadeIn();
+    });
+    $('.disco').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .traditionalMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.discoMom').fadeIn();
+    });
+    $('.savvy').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .traditionalMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.savvyMom').fadeIn();
+    });
+    $('.globetrotter').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .traditionalMom, .bookwormMom, .sweetheartMom').css('display','none');
+      $('.globetrotterMom').fadeIn();
+    });
+    $('.bookworm').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .traditionalMom, .sweetheartMom').css('display','none');
+      $('.bookwormMom').fadeIn();
+    });
+    $('.sweetheart').click(function(){
+      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .traditionalMom').css('display','none');
+      $('.sweetheartMom').fadeIn();
+    });
+
   });
 
   
