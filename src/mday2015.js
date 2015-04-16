@@ -12,16 +12,16 @@
   mdayApp.app_key = '1e278291b92745ce12da510abe507606';
 
   mdayApp.quotes = []
-  mdayApp.quotes.push('"As far as I\'m concerned, there\'s no job more important on the planet than being a mom." - Mark Wahlberg');
-  mdayApp.quotes.push('"My mom is definitely my rock." - Alicia Keys');
-  mdayApp.quotes.push('"I owe much to mother. She had an expert\'s understanding, but also approached art emotionally." - David Rockefeller');
-  mdayApp.quotes.push('"Mom always tells me to celebrate everyone\'s uniqueness. I like the way that sounds." - Hilary Duff');
-  mdayApp.quotes.push('"Sometimes the strength of motherhood is greater than natural laws." - Barbara Kingsolver');
-  mdayApp.quotes.push('"My mom\'s hot. I mean she\'s old, but my mom\'s out of control." - Paul Walker');
-  mdayApp.quotes.push('"I\'ve learned that every working mom is a superwoman." - Uma Thurman');
-  mdayApp.quotes.push('"I am sure that if the mothers of various nations could meet, there would be no more wars." - E. M. Forster');
-  mdayApp.quotes.push('"You may have tangible wealth untold. Caskets of jewels and coffers of gold. Richer than I you can never be — I had a mother who read to me." — Strickland Gillilan');
-  mdayApp.quotes.push('"Mama was my greatest teacher, a teacher of compassion, love and fearlessness. If love is sweet as a flower, then my mother is that sweet flower of love." - Stevie Wonder');
+  mdayApp.quotes.push(["As far as I'm concerned, there's no job more important on the planet than being a mom."," - Mark Wahlberg"]);
+  mdayApp.quotes.push(["My mom is definitely my rock."," - Alicia Keys"]);
+  mdayApp.quotes.push(["I owe much to mother. She had an expert's understanding, but also approached art emotionally."," - David Rockefeller"]);
+  mdayApp.quotes.push(["Mom always tells me to celebrate everyone's uniqueness. I like the way that sounds."," - Hilary Duff"]);
+  mdayApp.quotes.push(["Sometimes the strength of motherhood is greater than natural laws."," - Barbara Kingsolver"]);
+  mdayApp.quotes.push(["My mom's hot. I mean she's old, but my mom's out of control."," - Paul Walker"]);
+  mdayApp.quotes.push(["I've learned that every working mom is a superwoman."," - Uma Thurman"]);
+  mdayApp.quotes.push(["I am sure that if the mothers of various nations could meet, there would be no more wars."," - E. M. Forster"]);
+  mdayApp.quotes.push(["You may have tangible wealth untold. Caskets of jewels and coffers of gold. Richer than I you can never be — I had a mother who read to me."," — Strickland Gillilan"]);
+  mdayApp.quotes.push(["Mama was my greatest teacher, a teacher of compassion, love and fearlessness. If love is sweet as a flower, then my mother is that sweet flower of love."," - Stevie Wonder"]);
 
   mdayApp.data = []
   mdayApp.data.push("&allowedIngredient[]=bacon&allowedIngredient[]=eggs&allowedIngredient[]=toast&excludedIngredient[]=avocado&flavor.sweet=0.3&maxResult=20&allowedCourse[]=course^course-Breakfast+and+Brunch&excludedCourse[]=course^course-Beverages");
@@ -38,38 +38,33 @@
   function populateSearchResults( results ) { 
 
     mdayApp.results = results.matches;
+    mdayApp.urls = results
     mdayApp.quote = mdayApp.quotes[$('#momType').prop("selectedIndex")];
       console.log(mdayApp.results);
-      console.log(mdayApp.quote);
-      console.log($('#momType').prop("selectedIndex"));
 
-    randomResult = Math.floor(Math.random() * (mdayApp.results.length-1) - 1);
-    while (!('smallImageUrls' in mdayApp.results[randomResult])) {
-      randomResult = Math.floor(Math.random() * (mdayApp.results.length-1) - 1);
-      console.log("bad index");
-    }
+    $('#new').fadeIn().css("display","inline-block");
 
-
-    $("#recipeImg").attr("src", mdayApp.results[randomResult].smallImageUrls[0].substring(0, mdayApp.results[randomResult].smallImageUrls[0].length-4));
-    $("#recipeImg").attr("alt", mdayApp.results[randomResult].recipeName);
-    $("#recipeTitle").text(mdayApp.results[randomResult].recipeName);
-
-
+    cycleResult();
   }
   
+  function cycleResult() {
+    randomResult = Math.floor(Math.random() * (mdayApp.results.length-1) - 1);
+    if (mdayApp.results[randomResult] === undefined) {
+      randomResult = Math.floor(Math.random() * (mdayApp.results.length-1) - 1);
+      console.log("bad index: " + randomResult);
+      cycleResult();
+    } else {
+      $("#recipeImg").attr("src", mdayApp.results[randomResult].smallImageUrls[0].substring(0, mdayApp.results[randomResult].smallImageUrls[0].length-4));
+      $("#recipeImg").attr("alt", mdayApp.results[randomResult].recipeName);
+      $("#recipeTitle").text(mdayApp.results[randomResult].recipeName);
+      $("#recipeUrl").attr("href", "http://www.yummly.com/recipe/" + mdayApp.results[randomResult].id);
+    }
+  }
+
   $(function () {
     
-    $('#getResults').on('click', function(event) {
-      
-      event.preventDefault();
-       var yummlyAPI = "http://api.yummly.com/v1/api/recipes?_app_id=" + mdayApp.app_id + "&_app_key=" + mdayApp.app_key + mdayApp.data[$('#momType').prop("selectedIndex")];
-
-      $.ajax({
-        url: yummlyAPI, 
-        datatype: 'json',
-        success: populateSearchResults
-      });
-
+    $('#new').click(function(event) {
+      cycleResult();
     });
 
     $('.dropdown').click(function(){
@@ -83,45 +78,21 @@
       );
     });
 
-    $('.traditional').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.traditionalMom').fadeIn();
-    });
-    $('.rocker').click(function(){
-      $('.traditionalMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.rockerMom').fadeIn();
-    });
-    $('.artsy').click(function(){
-      $('.traditionalMom, .rockerMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.artsyMom').fadeIn();
-    });
-    $('.hippie').click(function(){
-      $('.rockerMom, .artsyMom, .traditionalMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.hippieMom').fadeIn();
-    });
-    $('.sporty').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .traditionalMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.sportyMom').fadeIn();
-    });
-    $('.disco').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .traditionalMom, .savvyMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.discoMom').fadeIn();
-    });
-    $('.savvy').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .traditionalMom, .globetrotterMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.savvyMom').fadeIn();
-    });
-    $('.globetrotter').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .traditionalMom, .bookwormMom, .sweetheartMom').css('display','none');
-      $('.globetrotterMom').fadeIn();
-    });
-    $('.bookworm').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .traditionalMom, .sweetheartMom').css('display','none');
-      $('.bookwormMom').fadeIn();
-    });
-    $('.sweetheart').click(function(){
-      $('.rockerMom, .artsyMom, .hippieMom, .sportyMom, .discoMom, .savvyMom, .globetrotterMom, .bookwormMom, .traditionalMom').css('display','none');
-      $('.sweetheartMom').fadeIn();
+    $('.mom').click(function(){
+      $('.theMoms div').css('display','none');
+      console.log($( "li" ).index( this ));
+      $('.theMoms div:nth-child(' + ( $( "li" ).index( this ) + 1 ) + ')').fadeIn();
+      // event.preventDefault();
+      var yummlyAPI = "http://api.yummly.com/v1/api/recipes?_app_id=" + mdayApp.app_id + "&_app_key=" + mdayApp.app_key + mdayApp.data[$( "li" ).index( this )];
+
+      $.ajax({
+        url: yummlyAPI, 
+        datatype: 'json',
+        success: populateSearchResults
+      });
+
+      $('#quote').html(mdayApp.quotes[$( "li" ).index( this )][0]);
+      $('#author').html(mdayApp.quotes[$( "li" ).index( this )][1]);
     });
 
   });

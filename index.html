@@ -25,6 +25,7 @@ jesseabramson.com
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="src/jquery.countdown.js"></script>
     <script src="src/mday2015.js"></script>
+    <script src="src/dragend.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Muli:300,400|Abril+Fatface' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -35,16 +36,16 @@ jesseabramson.com
       <h2>My mom is...</h2>
       <span class="triangle"></span>
       <ul id="momType">
-        <li class="traditional">Traditional</li>
-        <li class="rocker">A Rocker Chick</li>
-        <li class="artsy">Artsy Fartsy</li>
-        <li class="hippie">A Hippie</li>
-        <li class="sporty">Sporty and Strong</li>
-        <li class="disco">A Disco Diva</li>
-        <li class="savvy">A Businesswoman</li>
-        <li class="globetrotter">A Globetrotter</li>
-        <li class="bookworm">A Book Worm</li>
-        <li class="sweetheart">A Total Sweetheart</li>
+        <li class="traditional mom">Traditional</li>
+        <li class="rocker mom">A Rocker Chick</li>
+        <li class="artsy mom">Artsy Fartsy</li>
+        <li class="hippie mom">A Hippie</li>
+        <li class="sporty mom">Sporty and Strong</li>
+        <li class="disco mom">A Disco Diva</li>
+        <li class="savvy mom">A Businesswoman</li>
+        <li class="globetrotter mom">A Globetrotter</li>
+        <li class="bookworm mom">A Book Worm</li>
+        <li class="sweetheart mom">A Total Sweetheart</li>
       </ul>
       </div>
       <div class="theMoms">
@@ -94,16 +95,16 @@ jesseabramson.com
         <div>
           <img src="" id="recipeImg" alt="">
           <p id="recipeTitle"></p>
-          <a href="#">get the recipe</a>
+          <a href="#" id="recipeUrl">get the recipe</a>
         </div>
         <div>
           <span class="openQ">&ldquo;</span>
-          <p>As far as I'm concerned, there's no job more important on the planet than being a mom.</p>
+          <p id='quote'>As far as I'm concerned, there's no job more important on the planet than being a mom.</p>
           <span class="closeQ">&rdquo;</span>
-          <p>- Mark Wahlberg</p>
+          <p id='author'>- Mark Wahlberg</p>
         </div>
       </section>
-      <a class="go new" href="#">generate new recipe</a>
+      <a class="go new" id="new" href="#">generate new recipe</a>
     </main>
     <section class="flower">
       <div id="clock"></div>
