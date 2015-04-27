@@ -68,6 +68,7 @@
       $("#recipeImg").attr("alt", mdayApp.results[randomResult].recipeName);
       $("#recipeTitle").text(mdayApp.results[randomResult].recipeName);
       $("#recipeUrl").attr("href", "http://www.yummly.com/recipe/" + mdayApp.results[randomResult].id);
+      console.log(mdayApp.results);
       
       mdayApp.viewed.push(randomResult);
       if (mdayApp.viewed.length === mdayApp.results.length) {
