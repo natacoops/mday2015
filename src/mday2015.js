@@ -16,16 +16,16 @@
   {
      console.log('firefox');
      mdayApp.quotes = [];
-     mdayApp.quotes.push(["<img src='img/quote01.jpg' style='width: 100%;'>"," - Mark Wahlberg"]);
-     mdayApp.quotes.push(["<img src='img/quote02.jpg' style='width: 100%;'>"," - Metallica"]);
-     mdayApp.quotes.push(["<img src='img/quote03.jpg' style='width: 100%;'>"," - David Rockefeller"]);
-     mdayApp.quotes.push(["<img src='img/quote04.jpg' style='width: 100%;'>"," - Hilary Duff"]);
-     mdayApp.quotes.push(["<img src='img/quote05.jpg' style='width: 100%;'>"," - Barbara Kingsolver"]);
-     mdayApp.quotes.push(["<img src='img/quote06.jpg' style='width: 100%;'>"," - Maya Angelou"]);
-     mdayApp.quotes.push(["<img src='img/quote07.jpg' style='width: 100%;'>"," - Uma Thurman"]);
-     mdayApp.quotes.push(["<img src='img/quote08.jpg' style='width: 100%;'>"," - E. M. Forster"]);
-     mdayApp.quotes.push(["<img src='img/quote09.jpg' style='width: 100%;'>"," - Strickland Gillilan"]);
-     mdayApp.quotes.push(["<img src='img/quote10.jpg' style='width: 100%;'>"," - Stevie Wonder"]);
+     mdayApp.quotes.push(["<img src='img/quote01.jpg' style='width: 100%; margin-top: 20px;'>"," - Mark Wahlberg"]);
+     mdayApp.quotes.push(["<img src='img/quote02.jpg' style='width: 100%; margin-top: 20px;'>"," - Metallica"]);
+     mdayApp.quotes.push(["<img src='img/quote03.jpg' style='width: 100%; margin-top: 20px;'>"," - David Rockefeller"]);
+     mdayApp.quotes.push(["<img src='img/quote04.jpg' style='width: 100%; margin-top: 20px;'>"," - Hilary Duff"]);
+     mdayApp.quotes.push(["<img src='img/quote05.jpg' style='width: 100%; margin-top: 20px;'>"," - Barbara Kingsolver"]);
+     mdayApp.quotes.push(["<img src='img/quote06.jpg' style='width: 100%; margin-top: 20px;'>"," - Maya Angelou"]);
+     mdayApp.quotes.push(["<img src='img/quote07.jpg' style='width: 100%; margin-top: 20px;'>"," - Uma Thurman"]);
+     mdayApp.quotes.push(["<img src='img/quote08.jpg' style='width: 100%; margin-top: 20px;'>"," - E. M. Forster"]);
+     mdayApp.quotes.push(["<img src='img/quote09.jpg' style='width: 100%; margin-top: 20px;'>"," - Strickland Gillilan"]);
+     mdayApp.quotes.push(["<img src='img/quote10.jpg' style='width: 100%; margin-top: 20px;'>"," - Stevie Wonder"]);
   }
   else
   {
@@ -111,8 +111,8 @@
     if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
     {
       $('#quote').css('background', 'white');
-      $('.openQ').css('background', 'white');
-      $('.closeQ').css('background', 'white');
+      $('.openQ').css('display', 'none');
+      $('.closeQ').css('display', 'none');
     }
 
     $('#new').click(function(event) {
