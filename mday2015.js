@@ -16,16 +16,16 @@
   {
      console.log('firefox');
      mdayApp.quotes = [];
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote01.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote02.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote03.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote04.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote05.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote06.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote07.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote08.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote09.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote10.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote01.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote02.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote03.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote04.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote05.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote06.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote07.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote08.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote09.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='/img/quote10.jpg'>",""]);
   }
   else
   {
