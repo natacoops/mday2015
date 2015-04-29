@@ -16,16 +16,16 @@
   {
      console.log('firefox');
      mdayApp.quotes = [];
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote01.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote02.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote03.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote04.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote05.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote06.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote07.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote08.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote09.jpg'>",""]);
-     mdayApp.quotes.push(["<img src='http://nesse.co/mothers-day/img/quote10.jpg'>",""]);
+     mdayApp.quotes.push(["<img src='img/quote01.jpg' style='width: 100%;'>"," - Mark Wahlberg"]);
+     mdayApp.quotes.push(["<img src='img/quote02.jpg' style='width: 100%;'>"," - Metallica"]);
+     mdayApp.quotes.push(["<img src='img/quote03.jpg' style='width: 100%;'>"," - David Rockefeller"]);
+     mdayApp.quotes.push(["<img src='img/quote04.jpg' style='width: 100%;'>"," - Hilary Duff"]);
+     mdayApp.quotes.push(["<img src='img/quote05.jpg' style='width: 100%;'>"," - Barbara Kingsolver"]);
+     mdayApp.quotes.push(["<img src='img/quote06.jpg' style='width: 100%;'>"," - Maya Angelou"]);
+     mdayApp.quotes.push(["<img src='img/quote07.jpg' style='width: 100%;'>"," - Uma Thurman"]);
+     mdayApp.quotes.push(["<img src='img/quote08.jpg' style='width: 100%;'>"," - E. M. Forster"]);
+     mdayApp.quotes.push(["<img src='img/quote09.jpg' style='width: 100%;'>"," - Strickland Gillilan"]);
+     mdayApp.quotes.push(["<img src='img/quote10.jpg' style='width: 100%;'>"," - Stevie Wonder"]);
   }
   else
   {
@@ -108,6 +108,13 @@
 
   $(function () {
     
+    if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+    {
+      $('#quote').css('background', 'white');
+      $('.openQ').css('background', 'white');
+      $('.closeQ').css('background', 'white');
+    }
+
     $('#new').click(function(event) {
       cycleResult();
     });
